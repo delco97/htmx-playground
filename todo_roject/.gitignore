@@ -1,0 +1,19 @@
+# Django project
+*.pyc
+__pycache__/
+*.sqlite3
+*.pyo
+*.pyc
+*.pyd
+*.pyo
+*.swp
+*.swo
+*.log
+*.bak
+*.tmp
+*.tmp.*
+local_settings.py
+db.sqlite3
+media/
+static/
+.env

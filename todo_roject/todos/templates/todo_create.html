@@ -1,0 +1,14 @@
+<form 
+    hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+    hx-target="body"
+    hx-post="{% url 'todo_create' %}">
+    <label class="block">Title</label>
+    <input type="text" name="title" class="border p-2 w-full mb-3">
+    <label class="block">Description</label>
+    <textarea name="description" class="border p-2 w-full mb-3"></textarea>
+    <button class="bg-green-500 text-white px-4 py-2 rounded">Create</button>
+    <button
+        hx-get="{% url 'todo_list' %}"
+        hx-target="body"
+        class="bg-red-500 text-white px-4 py-2 rounded">Cancel</button>
+</form>

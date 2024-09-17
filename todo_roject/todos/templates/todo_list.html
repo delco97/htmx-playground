@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<ul id="todo-list">
+    <button 
+        hx-get="{% url 'todo_create' %}" 
+        hx-trigger="click"
+        hx-swap="outerHTML"
+        class="bg-blue-500 text-white p-2 mb-4">
+        Add Todo
+    </button>
+
+    {% for todo in todos %}
+        {% include 'todo_item.html' %}
+    {% endfor %}
+    
+</ul>    
+{% endblock %}

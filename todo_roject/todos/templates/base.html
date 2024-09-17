@@ -1,0 +1,25 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <title>Django Tailwind</title>
+		<!-- CDN minified version -->
+		<!-- <script src="https://unpkg.com/htmx.org@2.0.2" integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ" crossorigin="anonymous"></script> -->
+		
+		<!-- CDN unminified version (DEBUG only) -->
+		<script src="https://unpkg.com/htmx.org@2.0.2/dist/htmx.js" integrity="sha384-yZq+5izaUBKcRgFbxgkRYwpHhHHCpp5nseXp0MEQ1A4MTWVMnqkmcuFez8x5qfxr" crossorigin="anonymous"></script>
+
+		<!-- Production read: do not use a CDN. Add the htmx code to the project  -->
+		<!-- See: https://htmx.org/docs/#download-a-copy -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		{% tailwind_css %}
+	</head>
+	<body class="bg-gray-100 p-5">
+		<div class="container mx-auto">
+			<h1 class="text-3xl font-bold mb-5">TODO Application</h1>
+			{% block content %}{% endblock %}
+		</div>
+	</body>
+</html>

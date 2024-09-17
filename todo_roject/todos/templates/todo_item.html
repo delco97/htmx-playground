@@ -1,0 +1,22 @@
+
+<li class="border p-2 mb-2">
+    <h2 class="text-xl">{{ todo.title }}</h2>
+    <p>{{ todo.description }}</p>
+    <div>
+        <button 
+            hx-get="{% url 'todo_update' todo.pk %}" 
+            hx-target="closest li" 
+            hx-swap="outerHTML"
+            class="text-blue-500">
+            Edit
+        </button>
+        <button 
+            hx-delete="{% url 'todo_delete' todo.pk %}" 
+            hx-target="closest li" 
+            hx-swap="outerHTML"
+            hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+            class="text-red-500 ml-4">
+            Delete
+        </button>
+    </div>
+</li>
